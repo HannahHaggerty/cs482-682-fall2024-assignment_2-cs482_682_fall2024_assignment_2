@@ -1,3 +1,6 @@
+'''Hannah Haggerty
+CS 482
+Assignment 2'''
 import numpy as np
 import argparse
 import scipy.io
@@ -12,7 +15,7 @@ class MykmeansClustering:
 
     #Read the dataset using scipy.io.loadmat
     def get_dataset_file(self, dataset_file):
-        # Map numeric inputs to actual file names
+        # Map numeric tpfile name
         if dataset_file == '1':
             return 'dataset_q2.mat'
         else:
@@ -30,16 +33,15 @@ class MykmeansClustering:
         '''
         Initialize KMeans using sklearn and execute K-means clustering
         '''
-    
         self.model = KMeans(n_clusters=3, max_iter=300, random_state=0) #K means clustering find 3 clusters running a maximum of 300 iterations w/ fixed random state 
-    
-        # Fit the model to the data
-        self.model.fit(self.data)
-    
+     
+        # Fit the model to the data 
+        self.model.fit(self.data) 
+      
         
         cluster_centers = self.model.cluster_centers_ #get the the cluster centers
         return cluster_centers
-
+ 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Kmeans clustering')

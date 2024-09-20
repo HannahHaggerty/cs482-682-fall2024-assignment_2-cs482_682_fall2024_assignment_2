@@ -1,3 +1,6 @@
+'''Hannah Haggerty
+CS 482
+Assignment 2'''
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression, LinearRegression
@@ -35,8 +38,8 @@ class MyLogisticRegression:
             print("unsupported dataset number")
             return
 
-        self.training_set = pd.read_csv(train_dataset_file, sep=',', header=0)
-        self.X_train = self.training_set[['exam_score_1', 'exam_score_2']].values
+        self.training_set = pd.read_csv(train_dataset_file, sep=',', header=0) 
+        self.X_train = self.training_set[['exam_score_1', 'exam_score_2']].values #extract feature columns and  label column from the training dataset and store them
         self.y_train =  self.training_set ['label'].values
 
         if self.perform_test:
